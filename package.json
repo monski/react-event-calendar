@@ -19,6 +19,7 @@
     "prepublish": "npm run dist:modules",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
     "postinstall": "node lib/post_install.js"
+    
   },
   "main": "dist-modules",
   "devDependencies": {
