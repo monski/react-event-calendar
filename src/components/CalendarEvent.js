@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types'
 
 
 class CalendarEvent extends React.Component {
@@ -11,7 +12,7 @@ class CalendarEvent extends React.Component {
         // Bind methods
         this.handleClick = this.handleClick.bind(this);
     }
-    
+
     componentWillReceiveProps(nextProps) {
       this.sharedArguments = [null, this, nextProps.eventData, nextProps.day];
     }
@@ -22,7 +23,7 @@ class CalendarEvent extends React.Component {
     }
 
     render() {
-        // Return a placeholder element if there is no event data 
+        // Return a placeholder element if there is no event data
         if(!this.props.eventData) {
             return <div className="event-slot"></div>;
         }
@@ -46,7 +47,7 @@ class CalendarEvent extends React.Component {
                 onMouseOver={this.props.onMouseOver.bind(...this.sharedArguments)}
             >
                 <div className="event-title">
-                    {title}    
+                    {title}
                 </div>
             </div>
         );
@@ -54,15 +55,15 @@ class CalendarEvent extends React.Component {
 }
 
 CalendarEvent.propTypes = {
-    day: React.PropTypes.object.isRequired,
-    eventData: React.PropTypes.oneOfType([
-        React.PropTypes.object,
-        React.PropTypes.bool,
+    day: PropTypes.object.isRequired,
+    eventData: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.bool,
     ]),
-    onClick: React.PropTypes.func,
-    onMouseOut: React.PropTypes.func,
-    onMouseOver: React.PropTypes.func,
-    wrapTitle: React.PropTypes.bool,
+    onClick: PropTypes.func,
+    onMouseOut: PropTypes.func,
+    onMouseOver: PropTypes.func,
+    wrapTitle: PropTypes.bool,
 };
 
 CalendarEvent.defaultProps = {

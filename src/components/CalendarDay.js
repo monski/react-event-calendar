@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types'
 
 export default class CalendarDay extends React.Component {
     render () {
@@ -12,7 +13,7 @@ export default class CalendarDay extends React.Component {
         });
 
         return (
-            <div 
+            <div
                 onClick={onClick.bind(null, this, day)}
                 className={dayClasses}>
                 <div className="inner-grid">
@@ -27,10 +28,10 @@ export default class CalendarDay extends React.Component {
 }
 
 CalendarDay.propTypes = {
-    day: React.PropTypes.object.isRequired,
-    isToday: React.PropTypes.bool,
-    events: React.PropTypes.array,
-    onClick: React.PropTypes.func,
+    day: PropTypes.object.isRequired,
+    isToday: PropTypes.bool,
+    events: PropTypes.array,
+    onClick: PropTypes.func,
 };
 
 CalendarDay.defaultProps = {

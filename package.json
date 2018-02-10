@@ -19,7 +19,6 @@
     "prepublish": "npm run dist:modules",
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
     "postinstall": "node lib/post_install.js"
-    
   },
   "main": "dist-modules",
   "devDependencies": {
@@ -103,6 +102,7 @@
   ],
   "dependencies": {
     "calendar-base": "^0.2.1",
-    "classnames": "^2.2.4"
+    "classnames": "^2.2.4",
+    "prop-types": "^15.6.0"
   }
 }
